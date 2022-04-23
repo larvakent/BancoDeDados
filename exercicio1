@@ -1,0 +1,30 @@
+create database db_rh_empresa;
+use db_rh_empresa;
+create table tb_empregados(
+id bigint(5) auto_increment,
+nomeCompleto varchar(255) not null,
+cpf char(255) not null,
+idade int not null,
+salario double not null,
+funcao varchar(255),
+primary key (id)
+);
+select * from tb_empregados;
+insert into tb_empregados (nomeCompleto,cpf,idade,salario,funcao) 
+values ("Anderson José Santos","789.564.231-00",24,1.956,"Estagiário de Engenharia");
+insert into tb_empregados (nomeCompleto,cpf,idade,salario,funcao) 
+values ("Jonas Almeida","578.214.219-30",23,1.344,"Recepcionista");
+insert into tb_empregados (nomeCompleto,cpf,idade,salario,funcao) 
+values ("Laura Sebaux","109.378.285-42",28,6.785,"Engenheira Eletricista");
+insert into tb_empregados (nomeCompleto,cpf,idade,salario,funcao) 
+values ("Karla Maria Amorim","433.589.687-22",22,3.984,"Analista de Sistemas Jr.");
+insert into tb_empregados (nomeCompleto,cpf,idade,salario,funcao) 
+values ("Juliano Medeiros Souza","267.947.256-03",26,4.675,"Contador");
+
+select * from tb_empregados where salario > 2.000;
+select * from tb_empregados where salario < 2.000;
+
+update tb_empregados set salario = 2.457 where id = 1;
+
+delete from tb_empregados where id = 4;
+drop table tb_empregados;
