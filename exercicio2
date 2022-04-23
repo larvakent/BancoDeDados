@@ -1,0 +1,35 @@
+create database e_commerce_puma;
+use e_commerce_puma;
+create table produtos(
+id bigint(8) auto_increment,
+produto varchar(255) not null,
+cor char(255) not null,
+preco char(255) not null,
+tipoProduto char(255) not null,
+qtEstoque int not null,
+primary key(id)
+);
+select * from produtos;
+
+insert into produtos(produto,cor,preco,tipoProduto,qtEstoque) 
+values ("Camiseta Gola em V","Azul Bebê","R$149,90","Roupa",25);
+insert into produtos(produto,cor,preco,tipoProduto,qtEstoque) 
+values ("Calça Cargo","Bege","R$549,90","Roupa",12);
+insert into produtos(produto,cor,preco,tipoProduto,qtEstoque) 
+values ("Tênis Plataforma","Preto","R$689,90","Calçado",9);
+insert into produtos(produto,cor,preco,tipoProduto,qtEstoque) 
+values ("Camisa Manga Curta com Estampa de Tubarão","Branca","R$319,90","Roupa",20);
+insert into produtos(produto,cor,preco,tipoProduto,qtEstoque) 
+values ("Sapato Salto 15cm","Vermelho Escarlate","R$839,90","Calçado",5);
+insert into produtos(produto,cor,preco,tipoProduto,qtEstoque) 
+values ("Bola de Futebol Vulcanizada","Azul e Branca","R$799,00","Artigos",32);
+insert into produtos(produto,cor,preco,tipoProduto,qtEstoque) 
+values ("Jaqueta Moletom","Verde Musgo","R$569,90","Roupa",15);
+insert into produtos(produto,cor,preco,tipoProduto,qtEstoque) 
+values ("Cropped Manda Longa","Renda Preta","R$319,90","Roupa",04);
+
+select * from produtos where preco > "R$500,00";
+select * from produtos where preco < "R$500,00";
+
+update produtos set preco = "R$99,90" where id = 1;
+
